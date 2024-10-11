@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Form</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  /* Existing CSS */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .container {
+    background-color: aliceblue;
+    width: auto;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  li {
+    float: left;  
+  }
+
+  li a {
+    display: block;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding-right: 100px;
+    padding: 20px 50px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: rgb(71, 69, 69);
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+   
+    margin: auto;
+  }
+
+  .row-1 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 250px;
+  }
+
+  .row-1 > div {
+    background-color: white;
+    width: 400px;
+    height: 110px;
+    margin: 10px;
+    font-size: 30px;
+  }
+
+  .bottom-card {
+    background-color: aliceblue;
+  }
+
+  .i {
+    padding-top: 10px;
+  }
+
+  .r {
+    display: flex; 
+  }
+
+  .c {
+    font-size: 20px;
+    padding-top: 20px;
+  }
+
+  /* New CSS for Donation Form */
+  form {
+  background-color: white;
+  padding: 20px;
+  padding-right: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px; /* Adjust the width as needed */
+  margin: 20px auto; /* Center the form */
+}
+
+  form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  form label {
+    font-size: 16px;
+    color: #555;
+  }
+
+  form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  #maximizeGiftMessage {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #ffcc00;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+  #maximizeGiftMessage p {
+    margin: 0;
+    color: #333;
+  }
+</style>
+<body>
+  <div>
+    <ul> 
+      <li><a class="active" href="home.html">HOME</a></li>
+      <li><a href="ourwork.html">OUR WORK</a></li>
+      <li><a href="get.html">GET INVOLVED</a></li>
+      <li><a href="aboutus.html">ABOUT US</a></li>
+      <li><a href="donate.html">DONATE</a></li>
+      <li><a href="login.html">REGISTER</a></li>
+      <li><img src="https://media.istockphoto.com/vectors/paw_print-vector-id931785704?k=6&m=931785704&s=170667a&w=0&h=dgcf1jE7P5ltHSp8BED4nao7cwqP7INucb5PyowRYak=" class="logo" width="85" height="70"></li>
+    </ul>
+  </div>
+  <div class="container">
+    <div>
+      <h1 style="padding-left:20px;">Donate to WWF</h1>
+      <br><br>
+      <img src="https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10114/2400_DonationForms_Elephantherdsunset_1050.jpg" style="padding-left:20px;" width="670px" height="470px">
+           <pre>
+            <br><h style="font-size: 20px;">* Nature is Dynamic. So are the Ways You Can Support It</h>
+            <h style="font-size: 20px;">* Support WWF Through Your Donor Advised Fund</h>
+            <h style="font-size: 20px;">* Make a Qualified Charitable Distribution from your IRA</h>
+            <h style="font-size: 20px;">* Establish a Charitable Gift Annuity</h>
+            </pre>
+    </div>
+    <div class="row">
+      <div>
+        <h1>Donation Form</h1>
+        <form id="donationForm" action="submit_donation.php" method="post">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required><br>
+
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required><br>
+
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" required><br>
+
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+          </select><br>
+
+          <div id="maximizeGiftMessage" style="display: none;">
+            <p>Note: We are unable to mail thank-you gifts to donors outside the United States and its territories and have selected the "Maximize my gift" option for you.</p>
+          </div>
+
+          <label for="streetAddress">Street Address</label>
+          <input type="text" id="streetAddress" name="streetAddress" required><br>
+
+          <label for="apt">Apt., Ste., Bldg.</label>
+          <input type="text" id="apt" name="apt"><br>
+
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" required><br>
+
+          <label for="postalCode">Postal Code</label>
+          <input type="text" id="postalCode" name="postalCode" required><br>
+          
+          <label for="amount">Donation Amount</label>
+          <input type="number" id="amount" name="amount" required><br>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-card">
+    <br><br><br><br><br>
+    <hr>
+    <h2>Your support will help WWF:</h2><br>
+    <div class="row-1">
+      <div class="r">
+        <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--cloud-a1fa369daa25341ea530381e7a49a127d2bdf6a940df2e529fc2ef1be55afbf8.svg" width="130px" height="80px"></div>
+        <div class="c">Conserve wildlife and wild places</div>
+      </div>
+      <div class="r">
+        <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--footprint-14a3f80553af9d4cbcfff227f5c99485b7822d911a5e2f28d36057deb462a52b.svg" width="130px" height="80px"></div>
+        <div class="c"><p>Create a climate-resilient and zero-carbon world</p></div>
+      </div>
+    </div>
+    <div class="row-1">
+      <div class="r">
+        <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--tree-2866538a5b81dfeb51e782760f9df81e77cca79c4a107656fba3833bb42d55e9.svg" width="130px" height="80px"></div>
+        <div class="c"><p>Protect freshwater resources and landscapes</p></div>
+      </div>
+      <div class="r">
+        <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--droplet-b151647c9b6a9f14efdf90e3698db909c4dd271dbe38fd8ed809c6d4803792b4.svg" width="130px" height="80px"></div>
+        <div class="c"><p>Rebuild food systems to nourish people and nature</p></div>
+      </div>
+    </div>
+    <div class="row-1">
+      <div class="r">
+        <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--waves-eb38bf99f8e8e82b19fd8ee11562a1d933e39fe0c90fa4f653f76a0cd6ea72d7.svg"width="130px"height="80px"></div>
+            <div class="c"><p>Achieve healthy oceans and nature-positive seascapes</p></div>
+        </div>
+        <div class="r">
+            <div class="i"><img src="https://www.worldwildlife.org/assets/icons/homepage-goals--paw-6152b1642aa2788e8e8ec0167e7706c35159e80eaa80dd2cf52f43efce8eec2c.svg"width="130px"height="80px"></div>
+            <div class="c"><p>Conserve wildlife and wild places</p></div>
+        </div>
+           
+    </div>
+    <script>
+      $(document).ready(function() {
+        $('#country').change(function() {
+          if ($(this).val() !== 'USA') {
+            $('#maximizeGiftMessage').show();
+          } else {
+            $('#maximizeGiftMessage').hide();
+          }
+        });
+  
+        // Trigger change event to handle the default selected country on page load
+        $('#country').trigger('change');
+      });
+    </script>
+</body>
+</html>
